@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+<h:head>
+	<title>Desafio Java 3</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<table style="border: 2 px solid black; width: 100%">
+			<tr>
+				<td colspan="2" align="center">
+					<ui:insert name="cabecalho">
+						<h1>Desafio Java 3</h1>
+					</ui:insert>
+				</td>
+			</tr>
+			<tr>
+				<td width="20%">
+					<ui:insert name="menu">
+						<p:commandLink value="Novo" action="#{FuncionarioBean.pagNovo}" update="@form" style="Color: blue; font-size: 14px"/>
+						<p/>
+						<p:commandLink value="Pesquisa" action="#{FuncionarioBean.pagPesquisa}" update="@form" style="Color: blue; font-size: 14px"/>
+					</ui:insert>
+				</td>
+				<td>
+					<ui:insert name="conteudo">
+						Conteudo
+					</ui:insert>	
+				</td>
+			</tr>
+		</table>
+	</h:form>
+</h:body>
+</html>

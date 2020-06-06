@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<head>
+</head>
+	<ui:composition template="/Template.xhtml">
+		<ui:define name="conteudo">
+			<p:panel header="Novo Funcionario Funcionários" style="Margin-top: 10px; width: 100%">
+				<p:panelGrid columns = "4" style="width:100%">
+					<p:outputLabel value="Nome: "/>
+					<p:inputText value="#{FuncionarioBean.funcionario.nomeFunc}"/>
+					<p:outputLabel value="Cpf: "/>
+					<p:inputText value="#{FuncionarioBean.funcionario.cpf}"/>
+					<p:outputLabel value="Telefone: "/>
+					<p:inputText value="#{FuncionarioBean.funcionario.telefone}"/>
+					<p:outputLabel value="Rua: "/>
+					<p:inputText value="#{FuncionarioBean.funcionario.enderecosfunc.rua}"/>
+					<p:outputLabel value="Nº: "/>
+					<p:inputText value="#{FuncionarioBean.funcionario.enderecosfunc.numero}"/>
+					<p:outputLabel value="CEP: "/>
+					<p:inputText value="#{FuncionarioBean.funcionario.enderecosfunc.cep}"/>
+					<p:outputLabel value="Bairro: "/>
+					<p:inputText value="#{FuncionarioBean.funcionario.enderecosfunc.bairro}"/>
+					<p:outputLabel value="Cidade: "/>
+					<p:inputText value="#{FuncionarioBean.funcionario.enderecosfunc.cidade}"/>
+					<p:outputLabel value="Estado: "/>
+					<p:inputText value="#{FuncionarioBean.funcionario.enderecosfunc.estado}"/>
+					<p:outputLabel value="Observação: "/>
+					<p:inputText value="#{FuncionarioBean.funcionario.observacao}"/>
+				</p:panelGrid>
+					<p:commandButton value="Salvar" actionListener="#{FuncionarioBean.criarFuncionario}" update="@form"/>
+			</p:panel>
+		</ui:define>
+	</ui:composition>
+</html>

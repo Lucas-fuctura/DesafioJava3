@@ -1,0 +1,5 @@
+controle\LoginBean.class
+dao\UsuarioDAO.class
+dao\UsuarioDAOImpl.class
+entidade\Usuario.class
+util\JpaUtil.class

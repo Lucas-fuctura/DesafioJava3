@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+<h:head>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:panel header="Login" style="width:50%; margin: 0 auto">
+			<p:panelGrid columns="2" style="width: 100%">
+				<p:outputLabel value="Email: "/>
+				<p:inputText value="#{LoginBean.txtEmail}" style="width: 100%"/>
+				<p:outputLabel value="Senha: "/>
+				<p:password value="#{LoginBean.txtSenha}" style="width: 100%"/>
+			</p:panelGrid>
+				<p:commandLink value="Criar Conta" onclick="PF('criarUsuario').show();" style="font-size:14px; color:blue"/>
+				<p:commandButton value="Entrar" action="#{LoginBean.entrar}" update="@form" style="margin-left: 60%; margin-top: 5px"/>
+			<p:messages id="messages" showDetail="true" closable="true">
+		        <p:autoUpdate />
+		    </p:messages>
+		</p:panel>
+		
+		<p:dialog header="Criar Conta" visible="false" modal="true" widgetVar="criarUsuario">
+			<p:panelGrid columns="2">
+				<p:outputLabel value="E-mail: "/>
+				<p:inputText value="#{LoginBean.usuario.email}" style="width: 100%"/>
+				<p:outputLabel value="Nome: "/>
+				<p:inputText value="#{LoginBean.usuario.nome}" style="width: 100%"/>
+				<p:outputLabel value="Senha: "/>
+				<p:password value="#{LoginBean.usuario.senha}" style="width: 100%"/>
+			</p:panelGrid>
+				<p:commandButton value="Salvar" actionListener="#{LoginBean.salvarUsuario}" update="@form"
+					style="margin-left: 70%; margin-top: 5px"/>
+		</p:dialog>
+	</h:form>
+</h:body>
+</html>
